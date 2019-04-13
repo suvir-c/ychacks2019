@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from 'components/Button';
-
 /* eslint-disable react/prefer-stateless-function */
 class SideNavigation extends React.Component {
   render() {
@@ -25,6 +23,11 @@ class SideNavigation extends React.Component {
         <div className="nav-category-wrapper">
           <a href="/blank" className="link">
             <h4>Blank Starter Page</h4>
+          </a>
+        </div>
+        <div className="nav-category-wrapper">
+          <a href="/data" className="link">
+            <h4>Data</h4>
           </a>
         </div>
       </div>

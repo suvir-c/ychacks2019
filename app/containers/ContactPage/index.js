@@ -36,6 +36,7 @@ class ContactPage extends React.Component {
     };
     console.log('formData', formData);
     this.props.submitOnlineForm(formData);
+    console.log('existing forms', this.props);
   };
 
   render() {
@@ -140,11 +141,11 @@ const mapDispatchToProps = dispatch => ({
   submitOnlineForm: formData => dispatch(submitOnlineForm(formData)),
 });
 
+ContactPage.propTypes = {
+  submitOnlineForm: PropTypes.func,
+};
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(ContactPage);
-
-ContactPage.propTypes = {
-  submitOnlineForm: PropTypes.func,
-};

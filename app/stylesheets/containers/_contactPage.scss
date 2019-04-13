@@ -16,4 +16,10 @@
 		margin: 10px 0;
 		display: inline-block;
 	}
+	.side-by-side {
+		display:inline-block;
+	}
+	#side-by-side input {
+		width: 50%;
+	}
 }

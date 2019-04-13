@@ -35,6 +35,6 @@ class FormDataPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ forms: state.forms });
+const mapStateToProps = state => ({ forms: state.get('forms') });
 
 export default connect(mapStateToProps)(FormDataPage);

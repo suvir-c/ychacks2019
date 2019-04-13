@@ -145,7 +145,7 @@ class ContactPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  forms: state,
+  forms: state.get('forms'),
 });
 
 const mapDispatchToProps = dispatch => ({

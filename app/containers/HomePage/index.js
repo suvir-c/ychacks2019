@@ -1,5 +1,6 @@
 import React from 'react';
 import SideNavigation from 'components/SideNavigation';
+import Graph from 'components/Graph';
 
 class HomePage extends React.Component {
   state = {
@@ -26,16 +27,8 @@ class HomePage extends React.Component {
       <div className="page-wrapper-sidebar home-page">
         <SideNavigation />
         <div className="page-body">
-          <h1>Welcome</h1>
-          <p className="body-text">
-            This is a simple boilerplate for React code. It is built off of 
-            an existing boilerplate called <a className="highlight" href="https://github.com/facebook/create-react-app">react-boilerplate</a> If you have any questions about it,
-            feel free to contact me at teresaliu20@gmail.com.
-          </p>
-          <p className="body-text">
-            To get started, go ahead and look at "app/containers/App/index.js" to see 
-            the routing scheme of the app and go ahead and create your own containers and components.
-          </p>
+          <h1>Welcome, Jimmy Gomez!</h1>
+          <Graph />
         </div>
       </div>
     );

@@ -15,7 +15,6 @@ import CardViewTemplate from 'containers/CardViewTemplate';
 import ContactPage from 'containers/ContactPage';
 import NotFoundPage from 'containers/NotFoundPage';
 import BlankPage from 'containers/BlankPage';
-import TopNavigation from 'components/TopNavigation';
 import Footer from 'components/Footer';
 
 require('../../stylesheets/main.scss');
@@ -29,7 +28,6 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <TopNavigation />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/cards" component={CardViewTemplate} />

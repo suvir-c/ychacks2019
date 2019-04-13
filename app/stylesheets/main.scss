@@ -3,7 +3,7 @@
 @import 'components/all';
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	letter-spacing: 0.03em;
 	color: $dark-blue;
 }
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	letter-spacing: 0.02em;
 	font-size: 14px;
 	line-height: 1.5em;
@@ -31,7 +31,7 @@ input, textarea {
 	transition: 0.1s;
 	width: 100%;
 	color: lighten($dark-blue, 20%);
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	&:focus {
 		outline: none;
 		border-bottom-color: transparentize($green, 0.3);
@@ -44,7 +44,7 @@ textarea {
 	padding: 10px;
 	margin: 20px 0;
 	height: 250px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	border-bottom: 4px solid $off-white;
 	resize: none;
 }

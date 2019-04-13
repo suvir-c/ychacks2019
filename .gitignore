@@ -1,0 +1,34 @@
+# Mac OS X
+.DS_Store
+
+# Annoying tilde backup files
+*~
+.idea
+.vscode
+*.log
+*.swp
+#config
+node_modules
+
+.env
+./config/.env
+
+certs/*.pem
+certs/*.txt*
+certs/*.csr
+certs/*.crt
+certs/*.key
+certs/*.srl
+
+react-native-packager-cache-*/
+
+yarn-error.log
+src/client/.next/*
+src/server/index.js
+
+
+.nyc_output/
+coverage/
+
+package-lock.json
+report.*.json

@@ -1,0 +1,43 @@
+$white: #ffffff;
+$off-white: #fafafa;
+
+$dark-blue: #50567A;
+
+$light-blue: #C4E0FA;
+$blue: #3247CB;
+
+$medium-gray: #A1B0BD;
+$light-gray: #BACBDA;
+
+$orange: #F99F3F;
+$dark-orange: #E48238;
+
+$purple: #6D48D6;
+$dark-purple: #402F95;
+
+$teal: #72E4E3;
+$dark-teal: #2BB3BF;
+
+$pink: #F7719D;
+$dark-pink: #943456;
+
+$green: #64E579;
+$dark-green: #55C366;
+
+$red: #F85858;
+$dark-red: #BE2626;
+
+.orange-transparent {
+	background-color: $orange;
+	opacity: 0.5;
+}
+
+.teal-transparent {
+	background-color: $dark-teal;
+	opacity: 0.5;
+}
+
+.purple-transparent {
+	background-color: $purple;
+	opacity: 0.5;
+}

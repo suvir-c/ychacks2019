@@ -1,0 +1,24 @@
+.topNavigation {
+	position: fixed;
+	display: flex;
+	z-index: 1000;
+	align-items: center;
+	left: 0;
+	top: 0;
+	height: 70px;
+	background-color: white;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	.logo-wrapper {
+		margin: 5px 10px;
+		margin-left: 10%;
+		.logo {
+			height: 45px;
+		}
+	}
+
+	.rightNavSection {
+		margin-left: auto;
+		margin-right: 10%;
+	}
+}

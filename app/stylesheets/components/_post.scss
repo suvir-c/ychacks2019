@@ -1,0 +1,18 @@
+.post-wrapper {
+	.post {
+		padding: 10px 20px;
+		border-left: 12px solid transparentize($purple, 0.3);
+		transition: 0.2s;
+		background-color: $white;
+	}
+	.author {
+		color: $medium-gray;
+		margin: 10px 10px 8px 0px;
+	}
+	.discussions-button {
+		color: $medium-gray;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

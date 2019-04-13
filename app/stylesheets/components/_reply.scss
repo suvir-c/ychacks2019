@@ -1,0 +1,11 @@
+.reply {
+	padding: 10px 20px;
+	border-left: 6px solid transparentize($medium-gray, 0.3);
+	transition: 0.2s;
+	background-color: $white;
+	margin: 20px 0px 10px 40px;
+	.author {
+		color: $medium-gray;
+		margin: 0;
+	}
+}

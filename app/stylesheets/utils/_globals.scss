@@ -1,0 +1,52 @@
+.page-wrapper-sidebar {
+	display: flex;
+	min-height: 90vh;
+	padding: 100px 2%;
+}
+
+.page-body {
+	margin: 20px 2%;
+	max-width: 700px;
+	width: 100%;
+}
+.cards-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.card {
+	background-color: $off-white;
+	width: 30%;
+	padding: 20px 20px;
+	margin: 20px 10px;
+	border-left: 12px solid transparentize($orange, 0.3);
+	border-radius: 10px;
+	transition: 0.2s;
+	@extend .drop-shadow;
+	&:hover {
+		transform: translateY(-4px);
+	}
+	p {
+		color: $medium-gray;
+		line-height: 1.5em;
+	}
+}
+
+.form {
+	border: 1px solid $light-gray;
+	padding: 20px;
+}
+
+.card-long {
+	border-left: 12px solid transparentize($purple, 0.3);
+	width: 100%;
+}
+
+.body-text {
+	line-height: 2em;
+}
+
+.drop-shadow {
+	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}

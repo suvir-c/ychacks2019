@@ -1,0 +1,21 @@
+{
+  "title": "Card View Template",
+  "body": "This is imported data and text from the data.json file within the CardViewTemplate component. Each card has a title, description, and a link (so you can click on the cards). It's helpful for being able to paste in information without dealing with writing in React code. You can add more cards below by adding to the cards array within this data.json file and they will automatically render below.",
+  "cards": [
+    {
+      "link": "https://github.com/",
+      "title": "Github",
+      "description": "Push code online for version contol and collaboration."
+    },
+    {
+      "link": "https://www.youtube.com/",
+      "title": "YouTube",
+      "description": "Look up videos online."
+    },
+    {
+      "link": "https://www.google.com/",
+      "title": "Google",
+      "description": "Look things up on the internet."
+    }
+  ]
+}

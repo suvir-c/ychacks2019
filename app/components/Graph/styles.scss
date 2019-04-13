@@ -3,5 +3,36 @@
 .graph {
   background-color: $white;
   padding: 40px;
+  padding-top: 0;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-menu {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.graph-info {
+  
+}
+
+.graph-wrapper {
+  flex: 1;
+}
+
+.graph-stats {
+  display: flex;
+  text-align: center;
+  .stat {
+     margin: 0 40px 20px 40px;
+    h1 {
+      margin: 0;
+    }
+    p {
+      margin-top: 5px;
+    }
+  }
 }

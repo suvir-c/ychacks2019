@@ -55,3 +55,16 @@
 .drop-shadow {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
+
+// NEW STYLES
+.underline-button {
+	border-bottom: 2px solid $electric-blue;
+	margin: 5px;
+	padding: 5px 0;
+	color: $dark-blue;
+	&:hover {
+		border-bottom: 2px solid darken($electric-blue, 20%);
+		background-color: transparentize($electric-blue, 0.95);
+		color: darken($dark-blue, 10%);
+	}
+}

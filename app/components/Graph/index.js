@@ -5,52 +5,141 @@ import {
   YAxis,
   Scatter,
   ResponsiveContainer,
+  Tooltip,
+  Legend,
 } from 'recharts';
 import moment from 'moment';
+import Proptypes from 'prop-types';
 import './styles.scss';
 
-const data = [
-  { value: 14, time: 1503617297689 },
-  { value: 15, time: 1503616962277 },
-  { value: 15, time: 1503616882654 },
-  { value: 20, time: 1503613184594 },
-  { value: 15, time: 1503611308914 },
-];
+const TIMELINE_OPTIONS = {
+  MONTH: 'month',
+  WEEK: 'week',
+  DAY: 'day',
+};
 
 class Graph extends React.Component {
   state = {
-    timeStart: 1503617297689,
-    timeEnd: 1503611308914,
+    timelineOption: TIMELINE_OPTIONS.WEEK,
+    timeStart: moment().unix(),
+    timeEnd: moment()
+      .subtract(1, 'weeks')
+      .unix(),
+  };
+
+  changeTimeline = timelineOption => {
+    let timeStart = moment().unix();
+
+    if (timelineOption === TIMELINE_OPTIONS.MONTH) {
+      timeStart = moment()
+        .subtract(1, 'months')
+        .unix();
+    } else if (timelineOption === TIMELINE_OPTIONS.WEEK) {
+      timeStart = moment()
+        .subtract(1, 'weeks')
+        .unix();
+    } else if (timelineOption === TIMELINE_OPTIONS.DAY) {
+      timeStart = moment()
+        .subtract(1, 'days')
+        .unix();
+    }
+
+    this.setState({
+      timeEnd: moment().unix(),
+      timeStart,
+      timelineOption,
+    });
+  };
+
+  handleTimelineChange = event => {
+    const timelineOption = event.target.value;
+
+    let timeStart = moment().unix();
+
+    if (timelineOption === TIMELINE_OPTIONS.MONTH) {
+      timeStart = moment()
+        .subtract(1, 'months')
+        .unix();
+    } else if (timelineOption === TIMELINE_OPTIONS.WEEK) {
+      timeStart = moment()
+        .subtract(1, 'weeks')
+        .unix();
+    } else if (timelineOption === TIMELINE_OPTIONS.DAY) {
+      timeStart = moment()
+        .subtract(1, 'days')
+        .unix();
+    }
+
+    this.setState({
+      timeEnd: moment().unix(),
+      timeStart,
+      timelineOption,
+    });
   };
 
   render() {
-    const { timeStart, timeEnd } = this.state;
+    const { plots } = this.props;
+    const { timeStart, timeEnd, timelineOption } = this.state;
 
     return (
       <div className="graph">
-        <ResponsiveContainer width="95%" height={500}>
-          <ScatterChart>
-            <XAxis
-              dataKey="time"
-              domain={[timeStart, timeEnd]}
-              name="Time"
-              tickFormatter={unixTime => moment(unixTime).format('dd MM YY')}
-              type="number"
-            />
-            <YAxis dataKey="value" name="Value" />
-
-            <Scatter
-              data={data}
-              line={{ stroke: '#eee' }}
-              lineJointType="monotoneX"
-              lineType="joint"
-              name="Values"
-            />
-          </ScatterChart>
-        </ResponsiveContainer>
+        <div className="graph-menu">
+          <h2>{`This ${timelineOption}'s report`}</h2>
+          <select value={timelineOption} onChange={this.handleTimelineChange}>
+            <option value={TIMELINE_OPTIONS.MONTH}>Month</option>
+            <option value={TIMELINE_OPTIONS.WEEK}>Week</option>
+            <option value={TIMELINE_OPTIONS.DAY}>Day</option>
+          </select>
+        </div>
+        <div className="graph-info">
+          <div className="graph-stats">
+            <div className="stat">
+              <h1>153</h1>
+              <p>Phone calls</p>
+            </div>
+            <div className="stat">
+              <h1>309</h1>
+              <p>Emails</p>
+            </div>
+            <div className="stat">
+              <h1>30</h1>
+              <p>Letters</p>
+            </div>
+          </div>
+        </div>
+        <div className="graph-wrapper">
+          <ResponsiveContainer width="95%" height={400}>
+            <ScatterChart>
+              <XAxis
+                dataKey="time"
+                domain={[timeStart, timeEnd]}
+                name="Time"
+                tickFormatter={unixTime => moment(unixTime).format('DD/MM/YY')}
+                type="number"
+              />
+              <YAxis dataKey="value" name="Value" />
+              <Tooltip />
+              <Legend />
+              {plots.map(plot => (
+                <Scatter
+                  key={plot.name}
+                  data={plot.data}
+                  line={{ stroke: plot.lineColor }}
+                  lineJointType={plot.lineJointType}
+                  lineType={plot.lineType}
+                  name={plot.name}
+                />
+              ))}
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     );
   }
 }
+
+Graph.propTypes = {
+  plots: Proptypes.object,
+};
 
 export default Graph;

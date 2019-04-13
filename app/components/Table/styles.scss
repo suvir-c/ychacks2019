@@ -1,0 +1,26 @@
+@import '../../stylesheets/main.scss';
+
+.table {
+  background-color: $white;
+  padding: 40px;
+  margin-top: 40px;
+  flex: 1;
+  padding-top: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row:first-of-type {
+  color: $electric-blue;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+}
+
+.table-cell {
+  flex: 1;
+}

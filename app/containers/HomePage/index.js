@@ -1,6 +1,87 @@
 import React from 'react';
 import SideNavigation from 'components/SideNavigation';
 import Graph from 'components/Graph';
+import Table from 'components/Table';
+import moment from 'moment';
+
+const plots = [
+  {
+    lineColor: '#6D48D6',
+    lineJointType: 'monotoneX',
+    lineType: 'joint',
+    name: 'Phone Calls',
+    data: [
+      {
+        value: 14,
+        time: moment()
+          .subtract(1, 'days')
+          .unix(),
+      },
+      {
+        value: 15,
+        time: moment()
+          .subtract(2, 'days')
+          .unix(),
+      },
+      {
+        value: 15,
+        time: moment()
+          .subtract(3, 'days')
+          .unix(),
+      },
+      {
+        value: 20,
+        time: moment()
+          .subtract(4, 'days')
+          .unix(),
+      },
+      {
+        value: 15,
+        time: moment()
+          .subtract(5, 'days')
+          .unix(),
+      },
+    ],
+  },
+  {
+    lineColor: '#20A4EF',
+    lineJointType: 'monotoneX',
+    lineType: 'joint',
+    name: 'Emails',
+    data: [
+      {
+        value: 40,
+        time: moment()
+          .subtract(1, 'days')
+          .unix(),
+      },
+      {
+        value: 35,
+        time: moment()
+          .subtract(2, 'days')
+          .unix(),
+      },
+      {
+        value: 45,
+        time: moment()
+          .subtract(3, 'days')
+          .unix(),
+      },
+      {
+        value: 10,
+        time: moment()
+          .subtract(4, 'days')
+          .unix(),
+      },
+      {
+        value: 15,
+        time: moment()
+          .subtract(5, 'days')
+          .unix(),
+      },
+    ],
+  },
+];
 
 class HomePage extends React.Component {
   state = {
@@ -28,7 +109,8 @@ class HomePage extends React.Component {
         <SideNavigation />
         <div className="page-body">
           <h1>Welcome, Jimmy Gomez!</h1>
-          <Graph />
+          <Graph plots={plots} />
+          <Table />
         </div>
       </div>
     );

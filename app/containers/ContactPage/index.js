@@ -24,7 +24,6 @@ class ContactPage extends React.Component {
   };
 
   handleSendClick = () => {
-    console.log('handling click');
     const formData = {
       address: this.state.streetAddress,
       city: this.state.city,
@@ -36,13 +35,10 @@ class ContactPage extends React.Component {
       issues: this.state.issues,
       details: this.state.details,
     };
-    console.log('formData', formData);
     this.props.submitOnlineForm(formData);
-    console.log('existing forms', this.props);
   };
 
   render() {
-    console.log('props', this.props);
     const { isAboutBill } = this.state;
     return (
       <div className="page-wrapper-sidebar">

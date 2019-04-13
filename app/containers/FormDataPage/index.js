@@ -1,5 +1,6 @@
 import React from 'react';
 import SideNavigation from 'components/SideNavigation';
+import PropTypes from 'prop-types';
 import Table from 'components/Table';
 
 import { connect } from 'react-redux';
@@ -23,13 +24,15 @@ class FormDataPage extends React.Component {
   };
 
   componentDidMount() {
-    console.log('this.props', this.props);
-    // this.props.forms.map(submission => {
-    //   reformattedFormData.push({ rowData: ["1-1-1111", submission.email, submission.issues] });
-    // });
-    // this.state.reformattedFormData = {
-    //   reformattedFormData
-    // }
+    const reformattedFormData = [];
+    this.props.forms.forEach(submission => {
+      reformattedFormData.push({
+        rowData: ['1-1-1111', submission.email, submission.issues],
+      });
+    });
+    this.setState({
+      reformattedFormData,
+    });
   }
 
   render() {
@@ -48,6 +51,12 @@ class FormDataPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ forms: state.get('forms') });
+FormDataPage.propTypes = {
+  forms: PropTypes.object,
+};
+
+const mapStateToProps = state => ({
+  forms: state.get('forms'),
+});
 
 export default connect(mapStateToProps)(FormDataPage);

@@ -1,10 +1,12 @@
 import React from 'react';
-
+import Logo from '../../images/logo.svg';
 /* eslint-disable react/prefer-stateless-function */
 class SideNavigation extends React.Component {
   render() {
     return (
       <div className="side-navigation">
+        <img src={Logo} alt="logo" className="logo" />
+        <h2 className="logo-text">Populace</h2>
         <div className="nav-category-wrapper">
           <a href="/" className="link">
             <h4>Home</h4>

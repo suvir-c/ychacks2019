@@ -133,7 +133,7 @@ class HomePage extends React.Component {
         <SideNavigation />
         <div className="page-body dashboard">
           <h1>Welcome, Jimmy Gomez!</h1>
-          <Graph plots={plots} />
+          <Graph plots={plots} width='100%' />
           <Table
             width="49%"
             listHeader={firstListHeader}

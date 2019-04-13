@@ -85,6 +85,28 @@ const plots = [
   },
 ];
 
+const firstTableData = [
+  {
+    rowData: ['Topic', 'Mentions', 'Delta'],
+    onClick: () => alert('clicked!'),
+  },
+  {
+    rowData: ['Climate Change', 74, '+4'],
+    onClick: () => alert('clicked!'),
+  },
+  {
+    rowData: ['Cancer', 38, '-3'],
+    onClick: () => alert('clicked!'),
+  },
+  {
+    rowData: ['Healthcare', 48, '-2'],
+    onClick: () => alert('clicked!'),
+  },
+];
+
+const firstListHeader = 'Frequently mentioned topics';
+const firstListSubheader = 'What your constituents have been talking about';
+
 class HomePage extends React.Component {
   state = {
     name: '',
@@ -111,8 +133,13 @@ class HomePage extends React.Component {
         <SideNavigation />
         <div className="page-body dashboard">
           <h1>Welcome, Jimmy Gomez!</h1>
-          <Graph plots={plots} width="100%" />
-          <Table width="49%" />
+          <Graph plots={plots} />
+          <Table
+            width="49%"
+            listHeader={firstListHeader}
+            listSubheader={firstListSubheader}
+            tableData={firstTableData}
+          />
           <Sliders width="49%" />
         </div>
       </div>

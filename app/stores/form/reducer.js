@@ -1,9 +1,6 @@
 import * as Constants from './constants';
 
-const initialState = [];
-
-export default (state = initialState, action) => {
-  console.log('reducer');
+export default (state = [], action) => {
   switch (action.type) {
     case Constants.SUBMIT_ONLINE_FORM: {
       return [...state, action.formData];

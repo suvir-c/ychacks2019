@@ -15,7 +15,6 @@ import CardViewTemplate from 'containers/CardViewTemplate';
 import ContactPage from 'containers/ContactPage';
 import NotFoundPage from 'containers/NotFoundPage';
 import BlankPage from 'containers/BlankPage';
-import Footer from 'components/Footer';
 
 require('../../stylesheets/main.scss');
 
@@ -35,7 +34,6 @@ export default function App() {
         <Route exact path="/blank" component={BlankPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
     </div>
   );
 }

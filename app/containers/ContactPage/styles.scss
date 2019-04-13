@@ -1,0 +1,12 @@
+@import '../../stylesheets/main.scss';
+
+.form-wrapper {
+  background-color: $white;
+  padding: 40px;
+  padding-top: 0;
+  margin: 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}

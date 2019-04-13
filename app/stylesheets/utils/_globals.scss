@@ -68,3 +68,53 @@
 		color: darken($dark-blue, 10%);
 	}
 }
+
+.light-text {
+	color: $medium-gray;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.select-blue {
+	border-bottom: 2px solid $electric-blue;
+	margin: 5px;
+	border-radius: 0;
+	padding: 10px 5px;
+	padding-right: 20px;
+	color: $dark-blue;
+	width: 150px;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0px;
+  background-image: url("https://image.flaticon.com/icons/svg/60/60781.svg");
+  background-position: 99% 50%;
+  background-repeat: no-repeat;
+  background-size: 12px;
+	&:hover {
+		border-bottom: 2px solid lighten($electric-blue, 20%);
+		color: lighten($dark-blue, 10%);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+.button {
+	color: $white;
+	background-color: $red;
+	padding: 10px 50px;
+	font-size: 16px;
+	border-radius: 40px;
+	margin: 20px 0;
+	text-align: center;
+	transition: 0.2s;
+	cursor: pointer;
+	width: fit-content;
+	display: inline-block;
+	&:hover {
+		background-color: darken($red, 20%);
+		color: $white;
+	}
+}

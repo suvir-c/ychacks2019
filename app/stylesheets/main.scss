@@ -26,7 +26,7 @@ p {
 }
 
 input, textarea {
-	border-bottom: 4px solid $off-white;
+	border-bottom: 3px solid $off-white;
 	padding: 15px 0;
 	transition: 0.1s;
 	width: 100%;
@@ -34,7 +34,7 @@ input, textarea {
 	font-family: 'Libre Franklin', sans-serif;
 	&:focus {
 		outline: none;
-		border-bottom-color: transparentize($green, 0.3);
+		border-bottom-color: transparentize($electric-blue, 0.3);
 		color: $dark-blue;
 	}
 }
@@ -49,31 +49,6 @@ textarea {
 	resize: none;
 }
 
-select {
-	border-bottom: 2px solid $electric-blue;
-	margin: 5px;
-	height: fit-content;
-	border-radius: 0;
-	padding: 10px 5px;
-	padding-right: 20px;
-	color: $dark-blue;
-	width: 100px;
-	-webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 0px;
-  background-image: url("https://image.flaticon.com/icons/svg/60/60781.svg");
-  background-position: 99% 50%;
-  background-repeat: no-repeat;
-  background-size: 12px;
-	&:hover {
-		border-bottom: 2px solid lighten($electric-blue, 20%);
-		color: lighten($dark-blue, 10%);
-	}
-	&:focus {
-		outline: none;
-	}
-}
-
 button:focus {
 	outline:0;
 }
@@ -84,8 +59,11 @@ button:focus {
 }
 
 .input-label {
-	color: $light-gray;
+	color: $medium-gray;
 	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 11px;
+	font-weight: bold;
 	margin-bottom: 0;
-	margin-top: 50px;
+	margin-top: 30px;
 }

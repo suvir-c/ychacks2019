@@ -1,8 +1,10 @@
 import React from 'react';
 import SideNavigation from 'components/SideNavigation';
 import Graph from 'components/Graph';
+import Sliders from 'components/Sliders';
 import Table from 'components/Table';
 import moment from 'moment';
+import './styles.scss';
 
 const plots = [
   {
@@ -107,10 +109,11 @@ class HomePage extends React.Component {
     return (
       <div className="page-wrapper-sidebar home-page">
         <SideNavigation />
-        <div className="page-body">
+        <div className="page-body dashboard">
           <h1>Welcome, Jimmy Gomez!</h1>
-          <Graph plots={plots} />
-          <Table />
+          <Graph plots={plots} width="100%" />
+          <Table width="49%" />
+          <Sliders width="49%" />
         </div>
       </div>
     );

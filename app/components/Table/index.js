@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Proptypes from 'prop-types';
 import './styles.scss';
 
 const tableData = [
@@ -29,8 +29,10 @@ const data = {
 
 class Table extends React.Component {
   render() {
+    const { width } = this.props;
+
     return (
-      <div className="table" style={{ width: 600 }}>
+      <div className="table" style={{ width }}>
         <h2>{data.listHeader}</h2>
         {data.listSubheader && <p>{data.listSubheader}</p>}
         <div className="table-contents">
@@ -46,5 +48,9 @@ class Table extends React.Component {
     );
   }
 }
+
+Table.propTypes = {
+  width: Proptypes.number,
+};
 
 export default Table;

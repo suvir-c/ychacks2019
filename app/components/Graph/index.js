@@ -78,14 +78,18 @@ class Graph extends React.Component {
   };
 
   render() {
-    const { plots } = this.props;
+    const { plots, width } = this.props;
     const { timeStart, timeEnd, timelineOption } = this.state;
 
     return (
-      <div className="graph">
+      <div className="graph" style={{ width }}>
         <div className="graph-menu">
           <h2>{`This ${timelineOption}'s report`}</h2>
-          <select value={timelineOption} onChange={this.handleTimelineChange}>
+          <select
+            className="select-blue"
+            value={timelineOption}
+            onChange={this.handleTimelineChange}
+          >
             <option value={TIMELINE_OPTIONS.MONTH}>Month</option>
             <option value={TIMELINE_OPTIONS.WEEK}>Week</option>
             <option value={TIMELINE_OPTIONS.DAY}>Day</option>
@@ -95,15 +99,15 @@ class Graph extends React.Component {
           <div className="graph-stats">
             <div className="stat">
               <h1>153</h1>
-              <p>Phone calls</p>
+              <p className="light-text">Phone calls</p>
             </div>
             <div className="stat">
               <h1>309</h1>
-              <p>Emails</p>
+              <p className="light-text">Emails</p>
             </div>
             <div className="stat">
               <h1>30</h1>
-              <p>Letters</p>
+              <p className="light-text">Letters</p>
             </div>
           </div>
         </div>
@@ -140,6 +144,7 @@ class Graph extends React.Component {
 
 Graph.propTypes = {
   plots: Proptypes.object,
+  width: Proptypes.number,
 };
 
 export default Graph;

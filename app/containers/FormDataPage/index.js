@@ -4,9 +4,22 @@ import Table from 'components/Table';
 
 import { connect } from 'react-redux';
 
+const tableData = [
+  { rowData: ['Date', 'Email', 'Issues'] },
+  { rowData: ['April 13, 2019', 'johnny@heresjohnny.com', 'Education'] },
+  {
+    rowData: [
+      'April 13, 2019',
+      'teresaliu20@gmail.com',
+      'Technology, Entrepreneurship',
+    ],
+  },
+  { rowData: ['April 13, 2019', 'test', 'test'] },
+];
+
 class FormDataPage extends React.Component {
   state = {
-    reformattedFormData: [],
+    reformattedFormData: tableData,
   };
 
   componentDidMount() {
